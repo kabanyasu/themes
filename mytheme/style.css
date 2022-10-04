@@ -1,0 +1,15 @@
+/*
+Theme Name:かばにゃす
+Version: 1.0
+Author: かばにゃす
+Description: ここはかばにゃすがテストで作ったテーマでございます。
+*/
+
+ul {
+  column-count: 3; /* 列数を3列に指定 */
+  column-gap: 20px; /* 各列の間隔を調整する */
+}
+
+ul li {
+  border: 1px solid #000; /* 分かりやすいように線を引く */
+}
