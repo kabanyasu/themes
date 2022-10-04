@@ -24,13 +24,13 @@
             <div class="header-site-menu">
                 <nav class="site-menu">
                     <ul>
-                        <li>
-                            <a href="<?php echo esc_url(home_url()); ?>">HOME</a>
-                        </li>
-                        <li><a href="<?php get_template_directory_uri(); ?>/wp-content/themes/ontology/about.html">私たちについて</a></li>
-                        <li><a href="<?php get_template_directory_uri(); ?>/wp-content/themes/ontology/contact.html">ご質問・ご相談</a></li>
-                        <li><a href="<?php get_template_directory_uri(); ?>/wp-content/themes/ontology/access.html">アクセス</a></li>
-                        <li><a href="<?php get_template_directory_uri(); ?>/wp-content/themes/ontology/blog">ブログ</a></li>
+                        <?php
+                        wp_nav_menu(
+                            array(
+                                'theme_location' => 'main-menu',
+                            )
+                        );
+                        ?>
                     </ul>
                 </nav>
             </div>
