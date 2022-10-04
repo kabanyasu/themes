@@ -66,7 +66,15 @@
                                 </a>
                             </div>
                             <div class="blog-time">
-                                <?php the_time('Y-m-d'); ?>
+                                <?php
+                                $year = get_the_date('Y');
+                                $month = get_the_date('m');
+                                ?>
+                                <a href="<?php echo get_month_link($year,$month); ?>">
+                                    <time datetime="<?php the_time('Y-m-d'); ?>">
+                                        <?php the_time('Y-m-d'); ?>
+                                    </time>
+                                </a>
                             </div>
                         </div>
                         <a href="<?php the_permalink(); ?>">
