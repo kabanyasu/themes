@@ -1,0 +1,69 @@
+@charset "UTF-8";
+
+.title {
+    height: 310px;
+    background-image: url('./images/macbookFTHG1289_TP_V.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    text-shadow: 1px 1px 10px #4b2c14;
+}
+
+.title h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.title p {
+    font-size: 14px;
+    margin-top: 15px;
+}
+
+.detail {
+    width: 1000px;
+    max-width: 90%;
+    margin: 50px auto 100px;
+    padding: 40px;
+    background-image: url(./images/p0095_l.jpg);
+    background-repeat: repeat-y;
+    background-position: left top;
+    background-size: 100% auto;
+    font-size: 20px;
+}
+
+.detail-config {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.detail-config-tag {
+    background-color: darkkhaki;
+    color: #ffffff;
+    border-radius: 24px;
+    padding: 20px;
+}
+
+.detail-config-time {
+    margin-left: 20px;
+}
+
+
+.detail-content 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+img,
+iframe {
+    margin-top: 20px;
+}
