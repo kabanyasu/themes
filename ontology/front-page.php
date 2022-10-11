@@ -169,9 +169,17 @@
                                 <div class="front-blog-tag">
                                     <?php echo the_category(); ?>
                                 </div>
-                                <a class="front-blog-time" href="">
-                                    <?php the_time("Y-m-d"); ?>
-                                </a>
+                                <div class="front-blog-time">
+                                    <?php
+                                    $year = get_the_date('Y');
+                                    $month = get_the_date('m');
+                                    ?>
+                                    <a href="<?php echo get_month_link($year, $month); ?>">
+                                        <time datetime="<?php the_time('Y-m-d'); ?>">
+                                            <?php the_time('Y-m-d'); ?>
+                                        </time>
+                                    </a>
+                                </div>
                             </div>
                             <div class="text-detail">
                                 <?php the_excerpt(); ?>
