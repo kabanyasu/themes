@@ -30,13 +30,6 @@
                             )
                         );
                         ?>
-                        <!-- 
-                        <li><a href="<?php echo esc_url(home_url()); ?>">HOME</a></li>
-                        <li><a href="./about.html">私たちについて</a></li>
-                        <li><a href="./contact.html">ご質問・ご相談</a></li>
-                        <li><a href="./access.html">アクセス</a></li>
-                        <li><a href="<?php get_template_directory_uri(); ?>/wp-content/themes/ontology/blog">ブログ</a></li>
-                        -->
                     </ul>
                 </nav>
             </div>
