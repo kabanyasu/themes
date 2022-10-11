@@ -68,6 +68,7 @@
             <p class="footer-time">営業時間</p>
             <p class="copyright"><small>&copy;オントロジー</small></p>
         </footer>
+        <?php wp_footer(); ?>
 </body>
 
 </html>

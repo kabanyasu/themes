@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <?php wp_head(); ?>
 </head>
 
 <body>
@@ -40,14 +41,13 @@
                 <h1>tools:月別アーカイブ:「<?php echo get_the_date('Y年n月'); ?>」の検索結果</h1>
                 <p><?php echo get_the_date('Y年n月'); ?>に限定した記事を表示しています。</p>
             <?php elseif (is_category()) : ?>
-                <h1>タグ名:「<?php single_term_title(); ?>」の検索結果</h1>
+                <h1>tools:カテゴリー別アーカイブ:「<?php single_term_title(); ?>」の検索結果</h1>
                 <p><?php single_term_title(); ?>に限定した記事を表示しています。</p>
             <?php else : ?>
                 <h1>tools</h1>
                 <p>有益な情報を随時発信します。</p>
             <?php endif; ?>
         </div>
-
         <?php if (have_posts()) : ?>
             <?php while (have_posts()) :
                 the_post(); ?>
@@ -114,5 +114,7 @@
         <p class="footer-time">営業時間</p>
         <p class="copyright"><small>&copy;オントロジー</small></p>
     </footer>
+    <?php wp_footer(); ?>
 </body>
+
 </html>
