@@ -59,8 +59,12 @@
                         </a>
                         <div class="blog-info">
                             <div class="blog-tag">
-                                <a href="">
-                                    <?php the_category(); ?>
+                                <?php
+                                $cat = get_the_category();
+                                $cat = $cat[0];
+                                ?>
+                                <a href="<?php echo get_category_link($cat->term_id); ?>/?post_type=tools">
+                                    <?php echo $cat->cat_name; ?>
                                 </a>
                             </div>
                             <div class="blog-time">
