@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>合同会社オントロジー・blog</title>
     <meta name="description" content="合同会社オントロジーのホームページ">
     <link href="<?php get_template_directory_uri(); ?>/wp-content/themes/ontology/style.css" rel="stylesheet">
     <link href="<?php get_template_directory_uri(); ?>/wp-content/themes/ontology/common.css" rel="stylesheet">
