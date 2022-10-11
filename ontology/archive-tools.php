@@ -37,8 +37,11 @@
     <main class="main">
         <div class="title">
             <?php if (is_month()) : ?>
-                <h1>tools:月別アーカイブ：「<?php echo get_the_date('Y年n月'); ?>」の検索結果</h1>
+                <h1>tools:月別アーカイブ:「<?php echo get_the_date('Y年n月'); ?>」の検索結果</h1>
                 <p><?php echo get_the_date('Y年n月'); ?>に限定した記事を表示しています。</p>
+            <?php elseif (is_category()) : ?>
+                <h1>タグ名:「<?php single_term_title(); ?>」の検索結果</h1>
+                <p><?php single_term_title(); ?>に限定した記事を表示しています。</p>
             <?php else : ?>
                 <h1>tools</h1>
                 <p>有益な情報を随時発信します。</p>
@@ -112,5 +115,4 @@
         <p class="copyright"><small>&copy;オントロジー</small></p>
     </footer>
 </body>
-
 </html>

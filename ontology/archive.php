@@ -34,14 +34,13 @@
     </header>
     <main class="main">
         <div class="title">
-            <h1>
-                <?php if (is_month()) : ?>
-                    月別アーカイブ：「<?php echo get_the_date('Y年n月'); ?>」の検索結果
-                    <p><?php echo get_the_date('Y年n月'); ?>に限定した記事を表示しています。</p>
-                <?php else : ?>
-                    タグ名：「<?php single_term_title(); ?>」の検索結果
-                    <p><?php single_term_title(); ?>に限定した記事を表示しています。</p>
-                <?php endif; ?>
+            <?php if (is_month()) : ?>
+                <h1>月別アーカイブ:「<?php echo get_the_date('Y年n月'); ?>」の検索結果</h1>
+                <p><?php echo get_the_date('Y年n月'); ?>に限定した記事を表示しています。</p>
+            <?php else : ?>
+                <h1>カテゴリー別アーカイブ:「<?php single_term_title(); ?>」の検索結果</h1>
+                <p><?php single_term_title(); ?>に限定した記事を表示しています。</p>
+            <?php endif; ?>
             </h1>
         </div>
 
