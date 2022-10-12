@@ -5,7 +5,7 @@
         <div class="detail">
             <h1><?php the_title(); ?></h1>
             <div class="detail-config">
-                <div class="category">
+                <div class="single-category">
                     <?php
                     $cat = get_the_category();
                     $cat = $cat[0];
