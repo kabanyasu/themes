@@ -551,7 +551,7 @@
     margin-top: 20px;
 }
 
-.category {
+.single-category {
     background-color: #f4dd64;
     color: #000000;
     border-radius: 24px;
@@ -708,3 +708,17 @@ iframe {
         align-items: center;
         margin-top: 20px;
     }
+
+/*パンくずリスト設定*/
+.breadcrumb {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 20px;
+    background-color: #b3b0b0;
+    color: #ffffff;
+}
+
+.breadcrumb span a {
+    background-color: none;
+    color: #ffffff;
+}
