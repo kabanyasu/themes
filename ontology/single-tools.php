@@ -1,71 +1,37 @@
-<!doctype html>
-<html>
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="合同会社オントロジーのホームページ">
-    <!--
-    <link href="<?php get_template_directory_uri(); ?>/wp-content/themes/ontology/common.css" rel="stylesheet">
-    <link href="<?php get_template_directory_uri(); ?>/wp-content/themes/ontology/blogdetail.css" rel="stylesheet">
-    -->
-    <?php wp_head(); ?>
-</head>
-
-<body>
-    <header class="header">
-        <div class="header-inner">
-            <a class="header-logo" href="./index.html">
-                <img src="<?php get_template_directory_uri(); ?>/wp-content/themes/ontology/images/common/logo-header.png" alt="会社ロゴ">
-            </a>
-            <button class="toggle-menu-button"></button>
-            <div class="header-site-menu">
-                <nav class="site-menu">
-                    <ul>
+<?php get_header(); ?>
+<main class="main">
+    <?php if (have_posts()) : ?>
+        <?php while (have_posts()) :
+            the_post(); ?>
+            <div class="detail">
+                <h1><?php the_title(); ?></h1>
+                <div class="detail-config">
+                    <div class="category">
                         <?php
-                        wp_nav_menu(
-                            array(
-                                'theme_location' => 'main-menu',
-                            )
-                        );
+                        $cat = get_the_category();
+                        $cat = $cat[0];
                         ?>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </header>
-    <main class="main">
-        <?php if (have_posts()) : ?>
-            <?php while (have_posts()) :
-                the_post(); ?>
-                <div class="detail">
-                    <h1><?php the_title(); ?></h1>
-                    <div class="detail-config">
-                        <div class="category">
-                            <?php
-                            $cat = get_the_category();
-                            $cat = $cat[0];
-                            ?>
-                            <a href="<?php echo get_category_link($cat->term_id); ?>/?post_type=tools">
-                                <?php echo $cat->cat_name; ?>
-                            </a>
-                        </div>
-                        <div class="time">
-                            <?php
-                            $year = get_the_date('Y');
-                            $month = get_the_date('m');
-                            ?>
-                            <a href="<?php echo get_month_link($year, $month); ?>/?post_type=tools">
-                                <time datetime="<?php the_time('Y-m-d'); ?>">
-                                    <?php the_time('Y-m-d'); ?>
-                                </time>
-                            </a>
-                        </div>
+                        <a href="<?php echo get_category_link($cat->term_id); ?>/?post_type=tools">
+                            <?php echo $cat->cat_name; ?>
+                        </a>
                     </div>
-                    <div class="detail-content">
-                        <?php the_content(); ?>
+                    <div class="time">
+                        <?php
+                        $year = get_the_date('Y');
+                        $month = get_the_date('m');
+                        ?>
+                        <a href="<?php echo get_month_link($year, $month); ?>/?post_type=tools">
+                            <time datetime="<?php the_time('Y-m-d'); ?>">
+                                <?php the_time('Y-m-d'); ?>
+                            </time>
+                        </a>
                     </div>
                 </div>
-            <?php endwhile; ?>
-        <?php endif; ?>
-    </main>
-    <?php get_footer(); ?>
+                <div class="detail-content">
+                    <?php the_content(); ?>
+                </div>
+            </div>
+        <?php endwhile; ?>
+    <?php endif; ?>
+</main>
+<?php get_footer(); ?>
