@@ -43,13 +43,13 @@
         <div class="detail">
             <h2><?php the_title(); ?></h2>
             <div class="detail-config">
-                <div class="detail-config-tag">
+                <div class="category">
                     <a href="">
                         <?php the_category(' '); ?>
                     </a>
                 </div>
 
-                <div class="detail-config-time">
+                <div class="time">
                     <?php
                     $year = get_the_date('Y');
                     $month = get_the_date('m');

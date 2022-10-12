@@ -36,17 +36,13 @@
         </div>
     </header>
     <main class="main">
-        <div class="title">
-            <h1>tools</h1>
-            <p>有益な情報を随時発信します。</p>
-        </div>
         <?php if (have_posts()) : ?>
             <?php while (have_posts()) :
                 the_post(); ?>
                 <div class="detail">
-                    <h2><?php the_title(); ?></h2>
+                    <h1><?php the_title(); ?></h1>
                     <div class="detail-config">
-                        <div class="detail-config-tag">
+                        <div class="category">
                             <?php
                             $cat = get_the_category();
                             $cat = $cat[0];
@@ -55,7 +51,7 @@
                                 <?php echo $cat->cat_name; ?>
                             </a>
                         </div>
-                        <div class="blog-time">
+                        <div class="time">
                             <?php
                             $year = get_the_date('Y');
                             $month = get_the_date('m');
