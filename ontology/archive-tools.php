@@ -4,12 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="合同会社オントロジーのホームページ">
-    <link href="<?php get_template_directory_uri(); ?>/wp-content/themes/ontology/style.css" rel="stylesheet">
+    <!--
     <link href="<?php get_template_directory_uri(); ?>/wp-content/themes/ontology/common.css" rel="stylesheet">
     <link rel="stylesheet" href="<?php get_template_directory_uri(); ?>/wp-content/themes/ontology/blog.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    -->
     <?php wp_head(); ?>
 </head>
 
@@ -52,41 +50,47 @@
             <?php while (have_posts()) :
                 the_post(); ?>
                 <div class="blog">
-                    <a href="<?php the_permalink(); ?>">
-                        <img src="<?php get_template_directory_uri(); ?>/wp-content/themes/ontology/images/concept/img-item01.gif" alt="コーヒーを入れている画像">
-                    </a>
-                    <div class="blog-text">
+                    <?php if (has_post_thumbnail()) : ?>
                         <a href="<?php the_permalink(); ?>">
-                            <h2><?php the_title(); ?></h2>
-                        </a>
-                        <div class="blog-info">
-                            <div class="blog-tag">
-                                <?php
-                                $cat = get_the_category();
-                                $cat = $cat[0];
-                                ?>
-                                <a href="<?php echo get_category_link($cat->term_id); ?>/?post_type=tools">
-                                    <?php echo $cat->cat_name; ?>
-                                </a>
+                            <?php the_post_thumbnail('achive_thumbnail'); ?>
+                        <?php else : ?>
+                            <a href="<?php the_permalink(); ?>">
+                                <img src="<?php get_template_directory_uri(); ?>/wp-content/themes/ontology/images/concept/img-item01.gif" alt="コーヒーを入れている画像">
+                            </a>
+                        <?php endif; ?>
+
+                        <div class="blog-text">
+                            <a href="<?php the_permalink(); ?>">
+                                <h2><?php the_title(); ?></h2>
+                            </a>
+                            <div class="blog-info">
+                                <div class="blog-tag">
+                                    <?php
+                                    $cat = get_the_category();
+                                    $cat = $cat[0];
+                                    ?>
+                                    <a href="<?php echo get_category_link($cat->term_id); ?>/?post_type=tools">
+                                        <?php echo $cat->cat_name; ?>
+                                    </a>
+                                </div>
+                                <div class="blog-time">
+                                    <?php
+                                    $year = get_the_date('Y');
+                                    $month = get_the_date('m');
+                                    ?>
+                                    <a href="<?php echo get_month_link($year, $month); ?>/?post_type=tools">
+                                        <time datetime="<?php the_time('Y-m-d'); ?>">
+                                            <?php the_time('Y-m-d'); ?>
+                                        </time>
+                                    </a>
+                                </div>
                             </div>
-                            <div class="blog-time">
-                                <?php
-                                $year = get_the_date('Y');
-                                $month = get_the_date('m');
-                                ?>
-                                <a href="<?php echo get_month_link($year, $month); ?>/?post_type=tools">
-                                    <time datetime="<?php the_time('Y-m-d'); ?>">
-                                        <?php the_time('Y-m-d'); ?>
-                                    </time>
-                                </a>
-                            </div>
+                            <a href="<?php the_permalink(); ?>">
+                                <p>
+                                    <?php the_excerpt(); ?>
+                                </p>
+                            </a>
                         </div>
-                        <a href="<?php the_permalink(); ?>">
-                            <p>
-                                <?php the_excerpt(); ?>
-                            </p>
-                        </a>
-                    </div>
                 </div>
             <?php endwhile; ?>
         <?php endif; ?>

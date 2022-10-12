@@ -4,12 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="合同会社オントロジーのホームページ">
-    <link href="<?php get_template_directory_uri(); ?>/wp-content/themes/ontology/style.css" rel="stylesheet">
+    <!--
     <link href="<?php get_template_directory_uri(); ?>/wp-content/themes/ontology/common.css" rel="stylesheet">
     <link rel="stylesheet" href="<?php get_template_directory_uri(); ?>/wp-content/themes/ontology/blog.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    -->
     <?php wp_head(); ?>
 </head>
 
@@ -63,7 +61,7 @@
                                 $year = get_the_date('Y');
                                 $month = get_the_date('m');
                                 ?>
-                                <a href="<?php echo get_month_link($year,$month); ?>">
+                                <a href="<?php echo get_month_link($year, $month); ?>">
                                     <time datetime="<?php the_time('Y-m-d'); ?>">
                                         <?php the_time('Y-m-d'); ?>
                                     </time>

@@ -4,12 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="合同会社オントロジーのホームページ">
-    <link href="<?php get_template_directory_uri(); ?>/wp-content/themes/ontology/style.css" rel="stylesheet">
+    <!--
     <link href="<?php get_template_directory_uri(); ?>/wp-content/themes/ontology/common.css" rel="stylesheet">
     <link href="<?php get_template_directory_uri(); ?>/wp-content/themes/ontology/blogdetail.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    -->
     <?php wp_head(); ?>
 </head>
 
@@ -36,17 +34,13 @@
         </div>
     </header>
     <main class="main">
-        <div class="title">
-            <h1>tools</h1>
-            <p>有益な情報を随時発信します。</p>
-        </div>
         <?php if (have_posts()) : ?>
             <?php while (have_posts()) :
                 the_post(); ?>
                 <div class="detail">
-                    <h2><?php the_title(); ?></h2>
+                    <h1><?php the_title(); ?></h1>
                     <div class="detail-config">
-                        <div class="detail-config-tag">
+                        <div class="category">
                             <?php
                             $cat = get_the_category();
                             $cat = $cat[0];
@@ -55,7 +49,7 @@
                                 <?php echo $cat->cat_name; ?>
                             </a>
                         </div>
-                        <div class="blog-time">
+                        <div class="time">
                             <?php
                             $year = get_the_date('Y');
                             $month = get_the_date('m');

@@ -4,12 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="合同会社オントロジーのホームページ">
-    <link href="<?php get_template_directory_uri(); ?>/wp-content/themes/ontology/style.css" rel="stylesheet">
+    <!--
     <link href="<?php get_template_directory_uri(); ?>/wp-content/themes/ontology/common.css" rel="stylesheet">
     <link href="<?php get_template_directory_uri(); ?>/wp-content/themes/ontology/blogdetail.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    -->
     <?php wp_head(); ?>
 </head>
 
@@ -36,35 +34,35 @@
         </div>
     </header>
     <main class="main">
-        <div class="title">
-            <h1>blog</h1>
-            <p>有益な情報を随時発信します。</p>
-        </div>
-        <div class="detail">
-            <h2><?php the_title(); ?></h2>
-            <div class="detail-config">
-                <div class="detail-config-tag">
-                    <a href="">
-                        <?php the_category(' '); ?>
-                    </a>
+        <?php if (have_posts()) : ?>
+            <?php while (have_posts()) :
+                the_post(); ?>
+                <div class="detail">
+                    <h1><?php the_title(); ?></h1>
+                    <div class="detail-config">
+                        <div class="category">
+                            <a href="">
+                                <?php the_category(); ?>
+                            </a>
+                        </div>
+                        <div class="time">
+                            <?php
+                            $year = get_the_date('Y');
+                            $month = get_the_date('m');
+                            ?>
+                            <a href="<?php echo get_month_link($year, $month); ?>">
+                                <time datetime="<?php the_time('Y-m-d'); ?>">
+                                    <?php the_time('Y-m-d'); ?>
+                                </time>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="detail-content">
+                        <?php the_content(); ?>
+                    </div>
                 </div>
-
-                <div class="detail-config-time">
-                    <?php
-                    $year = get_the_date('Y');
-                    $month = get_the_date('m');
-                    ?>
-                    <a href="<?php echo get_month_link($year, $month); ?>">
-                        <time datetime="<?php the_time('Y-m-d'); ?>">
-                            <?php the_time('Y-m-d'); ?>
-                        </time>
-                    </a>
-                </div>
-            </div>
-            <div class="detail-content">
-                <?php the_content(); ?>
-            </div>
-        </div>
+            <?php endwhile; ?>
+        <?php endif; ?>
     </main>
     <footer class="footer">
         <nav class="site-menu">
