@@ -29,3 +29,11 @@
             </div>
         </div>
     </header>
+    <main class="main">
+        <?php if (!is_front_page()) : ?>
+            <?php if (function_exists('bcn_display')) : ?>
+                <div class="breadcrumb">
+                    <?php bcn_display(); ?>
+                </div>
+            <?php endif; ?>
+        <?php endif; ?>
