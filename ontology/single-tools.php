@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>合同会社オントロジー・Tools</title>
     <meta name="description" content="合同会社オントロジーのホームページ">
     <link href="<?php get_template_directory_uri(); ?>/wp-content/themes/ontology/style.css" rel="stylesheet">
     <link href="<?php get_template_directory_uri(); ?>/wp-content/themes/ontology/common.css" rel="stylesheet">
@@ -48,8 +47,12 @@
                     <h2><?php the_title(); ?></h2>
                     <div class="detail-config">
                         <div class="detail-config-tag">
-                            <a href="">
-                                <?php the_category(' '); ?>
+                            <?php
+                            $cat = get_the_category();
+                            $cat = $cat[0];
+                            ?>
+                            <a href="<?php echo get_category_link($cat->term_id); ?>/?post_type=tools">
+                                <?php echo $cat->cat_name; ?>
                             </a>
                         </div>
                         <div class="blog-time">
@@ -67,9 +70,9 @@
                     <div class="detail-content">
                         <?php the_content(); ?>
                     </div>
-                <?php endwhile; ?>
-            <?php endif; ?>
                 </div>
+            <?php endwhile; ?>
+        <?php endif; ?>
     </main>
 
     <footer class="footer">

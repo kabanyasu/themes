@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>合同会社オントロジー・blog</title>
     <meta name="description" content="合同会社オントロジーのホームページ">
     <link href="<?php get_template_directory_uri(); ?>/wp-content/themes/ontology/style.css" rel="stylesheet">
     <link href="<?php get_template_directory_uri(); ?>/wp-content/themes/ontology/common.css" rel="stylesheet">
@@ -11,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <?php wp_head(); ?>
 </head>
 
 <body>
@@ -30,13 +30,6 @@
                             )
                         );
                         ?>
-                        <!-- 
-                        <li><a href="<?php echo esc_url(home_url()); ?>">HOME</a></li>
-                        <li><a href="./about.html">私たちについて</a></li>
-                        <li><a href="./contact.html">ご質問・ご相談</a></li>
-                        <li><a href="./access.html">アクセス</a></li>
-                        <li><a href="<?php get_template_directory_uri(); ?>/wp-content/themes/ontology/blog">ブログ</a></li>
-                        -->
                     </ul>
                 </nav>
             </div>
@@ -110,6 +103,7 @@
         <p class="footer-time">営業時間</p>
         <p class="copyright"><small>&copy;オントロジー</small></p>
     </footer>
+    <?php wp_footer(); ?>
 </body>
 
 </html>
