@@ -48,37 +48,42 @@
             <?php while (have_posts()) :
                 the_post(); ?>
                 <div class="blog">
-                    <a href="<?php the_permalink(); ?>">
-                        <img src="<?php get_template_directory_uri(); ?>/wp-content/themes/ontology/images/concept/img-item01.gif" alt="コーヒーを入れている画像">
-                    </a>
-                    <div class="blog-text">
+                    <?php if (has_post_thumbnail()) : ?>
                         <a href="<?php the_permalink(); ?>">
-                            <h2><?php the_title(); ?></h2>
-                        </a>
-                        <div class="blog-info">
-                            <div class="blog-tag">
-                                <a href="">
-                                    <?php the_category(); ?>
-                                </a>
+                            <?php the_post_thumbnail('achive_thumbnail'); ?>
+                        <?php else : ?>
+                            <a href="<?php the_permalink(); ?>">
+                                <img src="<?php get_template_directory_uri(); ?>/wp-content/themes/ontology/images/concept/img-item01.gif" alt="コーヒーを入れている画像">
+                            </a>
+                        <?php endif; ?>
+                        <div class="blog-text">
+                            <a href="<?php the_permalink(); ?>">
+                                <h2><?php the_title(); ?></h2>
+                            </a>
+                            <div class="blog-info">
+                                <div class="blog-tag">
+                                    <a href="">
+                                        <?php the_category(); ?>
+                                    </a>
+                                </div>
+                                <div class="blog-time">
+                                    <?php
+                                    $year = get_the_date('Y');
+                                    $month = get_the_date('m');
+                                    ?>
+                                    <a href="<?php echo get_month_link($year, $month); ?>">
+                                        <time datetime="<?php the_time('Y-m-d'); ?>">
+                                            <?php the_time('Y-m-d'); ?>
+                                        </time>
+                                    </a>
+                                </div>
                             </div>
-                            <div class="blog-time">
-                                <?php
-                                $year = get_the_date('Y');
-                                $month = get_the_date('m');
-                                ?>
-                                <a href="<?php echo get_month_link($year, $month); ?>">
-                                    <time datetime="<?php the_time('Y-m-d'); ?>">
-                                        <?php the_time('Y-m-d'); ?>
-                                    </time>
-                                </a>
-                            </div>
+                            <a href="<?php the_permalink(); ?>">
+                                <p>
+                                    <?php the_excerpt(); ?>
+                                </p>
+                            </a>
                         </div>
-                        <a href="<?php the_permalink(); ?>">
-                            <p>
-                                <?php the_excerpt(); ?>
-                            </p>
-                        </a>
-                    </div>
                 </div>
             <?php endwhile; ?>
         <?php endif; ?>
