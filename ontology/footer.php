@@ -8,7 +8,7 @@
         );
         ?>
     </nav>
-    <a class="footer-logo" href="./index.html">
+    <a class="footer-logo" href="<?php echo esc_url(home_url()); ?>">
         <img src="<?php get_template_directory_uri(); ?>/wp-content/themes/ontology/images/common/logo-footer.png" alt="フッターロゴ">
     </a>
     <p class="footer-tel">電話番号</p>
