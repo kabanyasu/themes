@@ -1,8 +1,8 @@
 <!doctype html>
-<html>
+<html lang="ja">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="description" content="合同会社オントロジーのホームページ">
     <?php wp_head(); ?>
 </head>

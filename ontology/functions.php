@@ -47,3 +47,14 @@ function enqueue_scripts() {
     );
 }
 add_action('wp_enqueue_scripts', 'enqueue_scripts' ); 
+
+add_action( 'wp_footer', 'bzbsk_cf7_form_submit' );
+function bzbsk_cf7_form_submit() {
+echo <<< EOD
+<script>
+document.addEventListener( 'wpcf7mailsent', function( event ) {
+location = 'http://ontology.local/thanks/';
+}, false );
+</script>
+EOD;
+}
