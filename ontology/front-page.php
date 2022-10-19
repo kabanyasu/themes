@@ -68,8 +68,8 @@
     <div class="our-company-grid">
         <ul class="our-company-grid-text">
             <li>
-                <div class="pic">
-                    <img src="<?php get_template_directory_uri(); ?>/wp-content/themes/ontology/images/city-scape-and-network-connection-concept-SBI-301985213-3.png" alt="">
+                <div>
+                    <img class="pic" src="<?php get_template_directory_uri(); ?>/wp-content/themes/ontology/images/city-scape-and-network-connection-concept-SBI-301985213-3.png" alt="">
                 </div>
                 <dt>ITシステム</dt>
                 <dd>
@@ -79,8 +79,8 @@
                 </dd>
             </li>
             <li>
-                <div class="pic">
-                    <img src="<?php get_template_directory_uri(); ?>/wp-content/themes/ontology/images/city-scape-and-network-connection-concept-SBI-301985213-3.png" alt="">
+                <div>
+                    <img class="pic" src="<?php get_template_directory_uri(); ?>/wp-content/themes/ontology/images/city-scape-and-network-connection-concept-SBI-301985213-3.png" alt="">
                 </div>
                 <dt>IPO支援</dt>
                 <dd>
@@ -89,8 +89,8 @@
                 </dd>
             </li>
             <li>
-                <div class="pic">
-                    <img src="<?php get_template_directory_uri(); ?>/wp-content/themes/ontology/images/city-scape-and-network-connection-concept-SBI-301985213-3.png" alt="">
+                <div>
+                    <img class="pic" src="<?php get_template_directory_uri(); ?>/wp-content/themes/ontology/images/city-scape-and-network-connection-concept-SBI-301985213-3.png" alt="">
                 </div>
                 <dt>業務プロセス改善提案</dt>
                 <dd>
@@ -121,7 +121,7 @@
                 <div class="pic">
                     <div class="front-blog-img">
                         <a href="<?php the_permalink(); ?>">
-                            <img src="<?php get_template_directory_uri(); ?>/wp-content/themes/ontology/images/city-scape-and-network-connection-concept-SBI-301985213-3.png" alt="">
+                            <img class="pic" src="<?php get_template_directory_uri(); ?>/wp-content/themes/ontology/images/city-scape-and-network-connection-concept-SBI-301985213-3.png" alt="">
                         </a>
                     </div>
                 </div>

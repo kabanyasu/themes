@@ -272,31 +272,8 @@
 }
 
 .pic {
-    position: relative;
+    border-radius: 24px;
 }
-
-.pic::before,
-.pic::after {
-    content: '';
-    position: absolute;
-    transform: rotate(-35deg);
-    width: 70px;
-    height: 25px;
-    background-color: #f8f8f8;
-}
-
-.pic::before {
-    top: -10px;
-    left: -25px;
-    border-bottom: 1px solid #aaa;
-}
-
-.pic::after {
-    bottom: -10px;
-    right: -25px;
-    border-top: 1px solid #aaa;
-}
-
 
 .start-question {
     width: 1000px;
