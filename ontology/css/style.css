@@ -51,7 +51,7 @@ img {
 
 .header-logo {
     display: black;
-    width: 170px;
+    width: 400px;
 }
 
 .site-menu ul {
@@ -75,19 +75,12 @@ img {
 
 .footer-logo {
     display: block;
-    width: 235px;
     margin-top: 90px;
 }
 
-.footer-tel {
-    font-size: 26px;
-    font-weight: bold;
-    margin-top: 28px;
-}
-
-.footer-time {
-    font-size: 13px;
-    margin-top: 16px;
+.footer-logo img {
+    display: block;
+    width: 300px;
 }
 
 .copyright {

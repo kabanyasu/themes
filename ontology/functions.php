@@ -1,4 +1,5 @@
 <?php
+/*ナビゲーションメニュー設定*/
 function theme_setup() {
     register_nav_menu('main-menu', 'メインメニュー');
     add_theme_support('title-tag');
@@ -10,6 +11,7 @@ function theme_setup() {
 }
 add_action('after_setup_theme', 'theme_setup');
 
+/*googlefonts, css各種設定*/
 function enqueue_scripts() {
     wp_enqueue_style(
         'googlefonts1',
@@ -47,3 +49,22 @@ function enqueue_scripts() {
     );
 }
 add_action('wp_enqueue_scripts', 'enqueue_scripts' ); 
+
+/**コンタクトフォームのthanksページ設定*/
+add_action( 'wp_footer', 'bzbsk_cf7_form_submit' );
+function bzbsk_cf7_form_submit() {
+echo <<< EOD
+<script>
+document.addEventListener( 'wpcf7mailsent', function( event ) {
+location = 'http://ontology.local/thanks/'; /**/
+}, false );
+</script>
+EOD;
+}
+
+/*サイトアイコン（ファビコン）設定*/
+add_filter ( 'get_site_icon_url', 'my_site_icon_url' );
+
+function my_site_icon_url( $url ) {
+  return get_theme_file_uri ( '/images/inagaki_office_icon/logo-icon.jpeg' );
+}

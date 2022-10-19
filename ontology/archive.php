@@ -3,9 +3,12 @@
     <?php if (is_month()) : ?>
         <h1>月別アーカイブ:「<?php echo get_the_date('Y年n月'); ?>」の検索結果</h1>
         <p><?php echo get_the_date('Y年n月'); ?>に限定した記事を表示しています。</p>
-    <?php else : ?>
+    <?php elseif (is_category()) : ?>
         <h1>カテゴリー別アーカイブ:「<?php single_term_title(); ?>」の検索結果</h1>
         <p><?php single_term_title(); ?>に限定した記事を表示しています。</p>
+    <?php else : ?>
+        <h1>blog</h1>
+        <p>有益な情報を随時発信します。</p>
     <?php endif; ?>
     </h1>
 </div>
