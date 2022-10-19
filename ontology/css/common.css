@@ -96,6 +96,12 @@
     padding: 30px;
 }
 
+@media (max-width: 800px) {
+    .front-blog-detail {
+        display: block;
+    }
+}
+
 .front-blog-img {
     width: 300px;
 }
